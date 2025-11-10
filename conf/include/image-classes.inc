@@ -1,6 +1,9 @@
 # Install:
-#  /etc/entervices/privacyConfig.json
+#  /etc/entservices/privacyConfig.json
 IMAGE_CLASSES += "entservicesprivacyconfig"
+
+#  /etc/app-gateway/resolutions.json
+IMAGE_CLASSES += "appgatewayconfig"
 
 #  /etc/migration/entos_apps_migration.json
 IMAGE_CLASSES += "appsmigrationconfig"
