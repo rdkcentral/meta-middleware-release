@@ -26,6 +26,7 @@ python create_authservice_config(){
     config_path = os.path.join(build_path, "config.json")
     with open(config_path, "w") as json_file:
         json.dump(config, json_file, indent=2)
+    os.chmod(config_path, 0o644)
 }
 create_authservice_config[vardepsexclude] += "DATETIME"
 ROOTFS_POSTPROCESS_COMMAND += 'create_authservice_config; '
