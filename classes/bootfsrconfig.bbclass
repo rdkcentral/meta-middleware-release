@@ -9,10 +9,12 @@ python create_bootfsrconfig(){
     boot_fsr_file = d.getVar('BOOT_FSR_CFG_FILE') or ''
     if boot_fsr_flag in ['true', 'yes', '1']:
         if os.path.exists(boot_fsr_file):
+            bb.warn("BOOT_FSR_FLAG is set, boot_FSR.sh file is included in the build!")
             output_dir = d.getVar("IMAGE_ROOTFS", True)
             build_path = os.path.join(output_dir, "lib", "rdk")
             os.makedirs(build_path, exist_ok=True)
             output_file = os.path.join(build_path, "boot_FSR.sh")
+            bb.warn(""%s file is installed" % boot_fsr_file")
             shutil.copy(boot_fsr_file, output_file)
             # Change file permission to 777 (rwxrwxrwx)
             os.chmod(output_file, 0o777)
