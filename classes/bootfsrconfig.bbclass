@@ -1,5 +1,5 @@
-# Creates boot_FSR.sh file in the target image
-# The boot_FSR.sh file triggered during boot to perform FSR based on XRE/ResidentApp experience:
+# Creates boot_FSR.platform file in the target image
+# The boot_FSR.sh file triggered during boot to perform FSR based on boot_FSR.platform:
 #
 # BOOT_FSR_PLATFORM field should be configured in product layer.
 python create_bootfsrconfig(){
@@ -7,31 +7,22 @@ python create_bootfsrconfig(){
     import os
     boot_fsr_platform = (d.getVar('BOOT_FSR_PLATFORM') or '').strip().lower()
 
-    # Choose file for flex vs xumo
-    if boot_fsr_platform == 'flex':
-        boot_fsr_file = d.getVar('BOOT_FSR_FLEX_CFG_FILE') or ''
-    elif boot_fsr_platform == 'xumotv':
-        boot_fsr_file = d.getVar('BOOT_FSR_XUMOTV_CFG_FILE') or ''
-    else:
-        boot_fsr_file = ''
-
-    if boot_fsr_file:
-        if os.path.exists(boot_fsr_file):
-            bb.warn("BOOT_FSR_PLATFORM is set, boot_FSR.sh file is included in the build!")
-            output_dir = d.getVar("IMAGE_ROOTFS", True)
-            build_path = os.path.join(output_dir, "lib", "rdk")
-            os.makedirs(build_path, exist_ok=True)
-            output_file = os.path.join(build_path, "boot_FSR.sh")
-            bb.warn("%s file is installed" % boot_fsr_file)
-            shutil.copy(boot_fsr_file, output_file)
-            # Change file permission to 777 (rwxrwxrwx)
-            os.chmod(output_file, 0o777)
-        else:
-            bb.fatal("%s is not available" % boot_fsr_file)
+    if boot_fsr_platform in ['flex', 'xumotv']:
+        bb.warn("BOOT_FSR_PLATFORM is set, boot_FSR.platform file is included in the build!")
+        output_dir = d.getVar("IMAGE_ROOTFS", True)
+        build_path = os.path.join(output_dir, "etc", "migration")
+        os.makedirs(build_path, exist_ok=True)
+        output_file = os.path.join(build_path, "boot_FSR.platform")
+        try:
+            with open(output_file, "w", encoding="utf-8") as f:
+                f.write(boot_fsr_platform + "\n")
+            os.chmod(output_file, 0o644)  # config-style file
+            bb.note("Wrote platform marker: %s -> %s" % (boot_fsr_platform, output_file))
+        except Exception as e:
+            bb.fatal("Failed to write platform marker '%s': %s" % (output_file, e))
     else: 
-        bb.warn("BOOT_FSR_PLATFORM is not set, boot_FSR.sh file will not be included in the build!")
+        bb.warn("BOOT_FSR_PLATFORM is not set for this platform !!!")
 }
-BOOT_FSR_FLEX_CFG_FILE = "${MANIFEST_PATH_MW_RELEASE}/conf/include/boot_FSR_flex.sh"
-BOOT_FSR_XUMOTV_CFG_FILE = "${MANIFEST_PATH_MW_RELEASE}/conf/include/boot_FSR_xumotv.sh"
+
 create_bootfsrconfig[vardepsexclude] += "DATETIME"
 ROOTFS_POSTPROCESS_COMMAND += 'create_bootfsrconfig; '
