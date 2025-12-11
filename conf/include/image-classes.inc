@@ -11,5 +11,5 @@ IMAGE_CLASSES += "aimigrationoverrideconfig"
 # /etc/ripple/rdke/northamerica/ripple.config.json
 IMAGE_CLASSES += "ripplemigrationoverrideconfig"
 
-# /lib/rdk/boot_FSR.sh
+# /etc/migration/boot_FSR.platform
 IMAGE_CLASSES += "bootfsrconfig"
