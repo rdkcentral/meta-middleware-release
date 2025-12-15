@@ -5,6 +5,9 @@ RDK_MW_ARCH ??= "${MACHINE}"
 MIDDLEWARE_ARCH = "${RDK_MW_ARCH}-middleware"
 PACKAGE_EXTRA_ARCHS:append = " ${MIDDLEWARE_ARCH}"
 
+#Add new OSS consumption distro for xumo
+DISTRO_FEATURES:append = " STACK_LAYER_OSS_SUPPORT"
+
 RELEASE_NUM = "8.4.3.0"
 
 MW_IPK_PATH ?= "middleware-rel/${RELEASE_NUM}"
