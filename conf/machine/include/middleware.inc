@@ -6,8 +6,8 @@ MIDDLEWARE_ARCH = "${RDK_MW_ARCH}-middleware"
 PACKAGE_EXTRA_ARCHS:append = " ${MIDDLEWARE_ARCH}"
 
 #Add new OSS consumption distro for xione & xutom-tvs  until it is defaulted.
-DISTRO_FEATURES:append:rdktv-us-armv7a = " STACK_LAYER_OSS_SUPPORT"
-DISTRO_FEATURES:append:rdktv-us-armv8a = " STACK_LAYER_OSS_SUPPORT"
+DISTRO_FEATURES:append:rdk-arm7a = " STACK_LAYER_OSS_SUPPORT"
+DISTRO_FEATURES:append:rdk-arm64 = " STACK_LAYER_OSS_SUPPORT"
 DISTRO_FEATURES:append:xione-uk = " STACK_LAYER_OSS_SUPPORT"
 DISTRO_FEATURES:append:xione-alpaca-de = " STACK_LAYER_OSS_SUPPORT"
 DISTRO_FEATURES:append:xione-de = " STACK_LAYER_OSS_SUPPORT"
