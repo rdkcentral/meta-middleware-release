@@ -5,10 +5,11 @@ RDK_MW_ARCH ??= "${MACHINE}"
 MIDDLEWARE_ARCH = "${RDK_MW_ARCH}-middleware"
 PACKAGE_EXTRA_ARCHS:append = " ${MIDDLEWARE_ARCH}"
 
-RELEASE_NUM = "8.4.4.1"
+RELEASE_NUM = "RDKEVD-4868-BCM"
 
-MW_IPK_PATH ?= "middleware-rel/${RELEASE_NUM}"
+MW_IPK_PATH ?= "middleware-dbg/${RELEASE_NUM}"
 MW_IPK_SERVER_PATH ?= "${RDK_ARTIFACTS_BASE_URL}/${MW_IPK_PATH}/${RDK_MW_ARCH}/ipks/${BUILD_VARIANT}"
+#https://partners.artifactory.comcast.com/artifactory/middleware-dbg/RDKEVD-4868-BCM/xione-bcm-flex2/ipks/debug
 
 IPK_FEED_URIS += " \ 
                 ${MIDDLEWARE_ARCH}##${MW_IPK_SERVER_PATH} "
