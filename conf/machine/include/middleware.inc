@@ -10,7 +10,8 @@ PACKAGE_EXTRA_ARCHS:append = " ${MIDDLEWARE_ARCH}"
 # MW IPKs deployed = MW 8.4.2.1 + OSS 4.9.0
 # https://github.com/rdk-e/rdke-middleware-manifest/pull/5822  commit id a8d5c94a89bc34e278af3302c20a5b8c9bf7eca1
 
-RELEASE_NUM = "RDKEVD-3974-MW-8-4-2-1-r0"
+#IPKS from https://github.com/rdk-e/rdke-middleware-manifest/blob/release/8.5.1.0/tv-us-middleware-mtk.xml
+RELEASE_NUM = "8.5.1.0_B4"
 
 MW_IPK_PATH ?= "middleware-dbg/${RELEASE_NUM}"
 MW_IPK_SERVER_PATH ?= "${RDK_ARTIFACTS_BASE_URL}/${MW_IPK_PATH}/${RDK_MW_ARCH}/ipks/${BUILD_VARIANT}"
