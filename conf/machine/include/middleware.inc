@@ -5,6 +5,10 @@ RDK_MW_ARCH ??= "${MACHINE}"
 MIDDLEWARE_ARCH = "${RDK_MW_ARCH}-middleware"
 PACKAGE_EXTRA_ARCHS:append = " ${MIDDLEWARE_ARCH}"
 
+# Below are the branch and SHA details for MW release "RDKEMW-9394-r5"
+# Branch : develop
+# SHA    : e64e2663b3eb210ee118640eb3b13cece6c59eeb
+
 RELEASE_NUM = "RDKEMW-9394-r5"
 
 MW_IPK_PATH ?= "middleware-dbg/${RELEASE_NUM}"
