@@ -13,8 +13,7 @@ PACKAGE_EXTRA_ARCHS:append = " ${MIDDLEWARE_ARCH}"
 RELEASE_NUM = "RDKEMW-8587_Jan30-a2k-noven"
 
 MW_IPK_PATH ?= "middleware-dbg/${RELEASE_NUM}"
-#middleware-dbg/RDKEMW-8587_Jan30-a2k-noven/rdktv-us-armv7a/ipks/debug/
-MW_IPK_SERVER_PATH ?= "${RDK_ARTIFACTS_BASE_URL}/${MW_IPK_PATH}/rdktv-us-armv7a/ipks/debug"
+MW_IPK_SERVER_PATH ?= "${RDK_ARTIFACTS_BASE_URL}/${MW_IPK_PATH}/${RDK_MW_ARCH}/ipks/${BUILD_VARIANT}"
 
 
 IPK_FEED_URIS += " \ 
