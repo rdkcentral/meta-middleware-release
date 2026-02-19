@@ -8,7 +8,7 @@ PACKAGE_EXTRA_ARCHS:append = " ${MIDDLEWARE_ARCH}"
 RELEASE_NUM = "RDKEMW-12532-develop-r0"
 
 MW_IPK_PATH ?= "middleware-dbg/${RELEASE_NUM}"
-MW_IPK_SERVER_PATH ?= "https://partners.artifactory.comcast.com/artifactory/middleware-dbg/RDKEMW-12532-develop-r5/rdktv-us-armv7a/ipks/debug"
+MW_IPK_SERVER_PATH ?= "https://partners.artifactory.comcast.com/artifactory/middleware-dbg/RDKEMW-12532-develop-r5/rdktv-us-armv8a/ipks/debug"
 
 IPK_FEED_URIS += " \ 
                 ${MIDDLEWARE_ARCH}##${MW_IPK_SERVER_PATH} "
