@@ -11,6 +11,6 @@ MW_IPK_PATH ?= "middleware-rel/${RELEASE_NUM}"
 MW_IPK_SERVER_PATH ?= "${RDK_ARTIFACTS_BASE_URL}/${MW_IPK_PATH}/${RDK_MW_ARCH}/ipks/${BUILD_VARIANT}"
 
 IPK_FEED_URIS += " \ 
-                ${MIDDLEWARE_ARCH}##${MW_IPK_SERVER_PATH} "
+                ${MIDDLEWARE_ARCH}##https://partners.artifactory.comcast.com/artifactory/middleware-dbg/test_oss_4_11_0/xione-uk/ipks/debug "
 
 include ${@'oss_mw.inc' if 'STACK_LAYER_OSS_SUPPORT' in d.getVar('DISTRO_FEATURES').split() else ''}
