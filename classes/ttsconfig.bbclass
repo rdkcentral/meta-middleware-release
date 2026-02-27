@@ -1,9 +1,18 @@
 # Creates /etc/entservices/ttsConfig.json configuration files
-# for tts plugin from entservices compontent 
+# for tts plugin from entservices component 
 # with the given configuration values:
 # Field : Value
-#   - ess_url: ESS_URL
-#   - ess_client_id: ESS_CLIENT_ID
+#   - cloud_url: TEXTTOSPEECH_ENDPOINT
+#   - cloud_secure_url: TEXTTOSPEECH_SECURE_ENDPOINT
+#   - local_url: TEXTTOSPEECH_LOCAL_ENDPOINT
+#   - language: TEXTTOSPEECH_LANGUAGE
+#   - en_voice: TEXTTOSPEECH_VOICE_FOR_EN
+#   - rate: TEXTTOSPEECH_SPEECHRATE
+#   - url_type: TEXTTOSPEECH_ENDPOINT_TYPE
+#   - sat_callsign: TEXTTOSPEECH_SATPLUGINCALLSIGN
+#   - en_local_voice: TEXTTOSPEECH_LOCALVOICE_FOR_EN
+#   - es_local_voice: TEXTTOSPEECH_LOCALVOICE_FOR_ES
+#   - fr_local_voice: TEXTTOSPEECH_LOCALVOICE_FOR_FR
 #
 # Field values should be configured in product layer.
 
