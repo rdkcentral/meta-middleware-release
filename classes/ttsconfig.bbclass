@@ -28,38 +28,38 @@ python create_ttsconfig(){
     import json
     import os
 
-    def get(var):
-        return d.getVar(var, True) or ""
+    def get(var, default=""):
+        return d.getVar(var, True) or default
 
-    config = {
-            "endpoint": get("TEXTTOSPEECH_ENDPOINT"),
-            "secureendpoint": get("TEXTTOSPEECH_SECURE_ENDPOINT"),
-            "endpoint_type": get("TEXTTOSPEECH_ENDPOINT_TYPE"),
-            "localendpoint": get("TEXTTOSPEECH_LOCAL_ENDPOINT"),
-            "speechrate": get("TEXTTOSPEECH_SPEECHRATE"),
-            "satplugincallsign": get("TEXTTOSPEECH_SATPLUGINCALLSIGN"),
-            "language": get("TEXTTOSPEECH_LANGUAGE"),
-            "volume": int(get("TEXTTOSPEECH_VOLUME", 100)),
-            "rate": int(get("TEXTTOSPEECH_RATE", 50)),
+config = {
+    "endpoint": get("TEXTTOSPEECH_ENDPOINT"),
+    "secureendpoint": get("TEXTTOSPEECH_SECURE_ENDPOINT"),
+    "endpoint_type": get("TEXTTOSPEECH_ENDPOINT_TYPE"),
+    "localendpoint": get("TEXTTOSPEECH_LOCAL_ENDPOINT"),
+    "speechrate": get("TEXTTOSPEECH_SPEECHRATE"),
+    "satplugincallsign": get("TEXTTOSPEECH_SATPLUGINCALLSIGN"),
+    "language": get("TEXTTOSPEECH_LANGUAGE"),
+    "volume": get("TEXTTOSPEECH_VOLUME", 100),
+    "rate": get("TEXTTOSPEECH_RATE", 50),
 
-            "voices": {
-                "en-US": get("TEXTTOSPEECH_VOICE_FOR_EN"),
-                "es-MX": get("TEXTTOSPEECH_VOICE_FOR_ES"),
-                "fr-CA": get("TEXTTOSPEECH_VOICE_FOR_FR"),
-                "en-GB": get("TEXTTOSPEECH_VOICE_FOR_GB"),
-                "de-DE": get("TEXTTOSPEECH_VOICE_FOR_DE"),
-                "it-IT": get("TEXTTOSPEECH_VOICE_FOR_IT"),
-            },
+    "voices": {
+        "en-US": get("TEXTTOSPEECH_VOICE_FOR_EN"),
+        "es-MX": get("TEXTTOSPEECH_VOICE_FOR_ES"),
+        "fr-CA": get("TEXTTOSPEECH_VOICE_FOR_FR"),
+        "en-GB": get("TEXTTOSPEECH_VOICE_FOR_GB"),
+        "de-DE": get("TEXTTOSPEECH_VOICE_FOR_DE"),
+        "it-IT": get("TEXTTOSPEECH_VOICE_FOR_IT"),
+    },
 
-            "local_voices": {
-                "en-US": get("TEXTTOSPEECH_LOCALVOICE_FOR_EN"),
-                "es-MX": get("TEXTTOSPEECH_LOCALVOICE_FOR_ES"),
-                "fr-CA": get("TEXTTOSPEECH_LOCALVOICE_FOR_FR"),
-                "en-GB": get("TEXTTOSPEECH_LOCALVOICE_FOR_GB"),
-                "de-DE": get("TEXTTOSPEECH_LOCALVOICE_FOR_DE"),
-                "it-IT": get("TEXTTOSPEECH_LOCALVOICE_FOR_IT"),
-            }
+    "local_voices": {
+        "en-US": get("TEXTTOSPEECH_LOCALVOICE_FOR_EN"),
+        "es-MX": get("TEXTTOSPEECH_LOCALVOICE_FOR_ES"),
+        "fr-CA": get("TEXTTOSPEECH_LOCALVOICE_FOR_FR"),
+        "en-GB": get("TEXTTOSPEECH_LOCALVOICE_FOR_GB"),
+        "de-DE": get("TEXTTOSPEECH_LOCALVOICE_FOR_DE"),
+        "it-IT": get("TEXTTOSPEECH_LOCALVOICE_FOR_IT"),
     }
+}
 
     # Ensure the directory exists
     rootfs_dir = d.getVar("IMAGE_ROOTFS", True)
