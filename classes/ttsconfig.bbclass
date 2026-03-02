@@ -2,18 +2,26 @@
 # for tts plugin from entservices component 
 # with the given configuration values:
 # Field : Value
-#   - cloud_url: TEXTTOSPEECH_ENDPOINT
-#   - cloud_secure_url: TEXTTOSPEECH_SECURE_ENDPOINT
-#   - local_url: TEXTTOSPEECH_LOCAL_ENDPOINT
+#   - endpoint: TEXTTOSPEECH_ENDPOINT
+#   - secureendpoint: TEXTTOSPEECH_SECURE_ENDPOINT
+#   - localendpoint: TEXTTOSPEECH_LOCAL_ENDPOINT
+#   - speechrate: TEXTTOSPEECH_SPEECHRATE
+#   - satplugincallsign: TEXTTOSPEECH_SATPLUGINCALLSIGN
 #   - language: TEXTTOSPEECH_LANGUAGE
-#   - en_voice: TEXTTOSPEECH_VOICE_FOR_EN
-#   - rate: TEXTTOSPEECH_SPEECHRATE
-#   - url_type: TEXTTOSPEECH_ENDPOINT_TYPE
-#   - sat_callsign: TEXTTOSPEECH_SATPLUGINCALLSIGN
-#   - en_local_voice: TEXTTOSPEECH_LOCALVOICE_FOR_EN
-#   - es_local_voice: TEXTTOSPEECH_LOCALVOICE_FOR_ES
-#   - fr_local_voice: TEXTTOSPEECH_LOCALVOICE_FOR_FR
-#
+#   - volume: TEXTTOSPEECH_VOLUME
+#   - rate: TEXTTOSPEECH_RATE
+#   - en-US: TEXTTOSPEECH_VOICE_FOR_EN
+#   - es-MX: TEXTTOSPEECH_VOICE_FOR_ES
+#   - fr-CA: TEXTTOSPEECH_VOICE_FOR_FR
+#   - en-GB: TEXTTOSPEECH_VOICE_FOR_GB
+#   - de-DE: TEXTTOSPEECH_VOICE_FOR_DE
+#   - it-IT: TEXTTOSPEECH_VOICE_FOR_IT
+#   - en-US: TEXTTOSPEECH_LOCALVOICE_FOR_EN
+#   - es-MX: TEXTTOSPEECH_LOCALVOICE_FOR_ES
+#   - fr-CA: TEXTTOSPEECH_LOCALVOICE_FOR_FR
+#   - en-GB: TEXTTOSPEECH_LOCALVOICE_FOR_GB
+#   - de-DE: TEXTTOSPEECH_LOCALVOICE_FOR_DE
+#   - it-IT: TEXTTOSPEECH_LOCALVOICE_FOR_IT
 # Field values should be configured in product layer.
 
 python create_ttsconfig(){
