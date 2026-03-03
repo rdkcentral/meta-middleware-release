@@ -6,13 +6,11 @@ MIDDLEWARE_ARCH = "${RDK_MW_ARCH}-middleware"
 PACKAGE_EXTRA_ARCHS:append = " ${MIDDLEWARE_ARCH}"
 
 # Conditional release number
-RELEASE_REV = "r5"
+# MW 8.5.2.0 + OSS 4.12.0 + custome vendor ipks with oss 4.12.0
+# PR : https://github.com/rdk-e/rdke-middleware-manifest/pull/6564
+# SHA 97d934e31d51eaffaf49a953df4a821e0e2ca389
 
-RELEASE_NUM_ML  = "RDKEVD-6153_OSS_4_12_0_ml-${RELEASE_REV}"
-RELEASE_NUM_NML = "RDKEVD-6153_OSS_4_12_0_nml-${RELEASE_REV}"
-
-RELEASE_NUM = "RDKEVD-6153_OSS_4_12_0_nml-${RELEASE_REV}"
-
+RELEASE_NUM = "RDKEVD-6153_OSS_4_12_0_nml-r5"
 
 MW_IPK_PATH ?= "middleware-dbg/${RELEASE_NUM}"
 MW_IPK_SERVER_PATH ?= "${RDK_ARTIFACTS_BASE_URL}/${MW_IPK_PATH}/${RDK_MW_ARCH}/ipks/${BUILD_VARIANT}"
