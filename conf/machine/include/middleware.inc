@@ -13,7 +13,7 @@ PACKAGE_EXTRA_ARCHS:append = " ${MIDDLEWARE_ARCH}"
 # Note: The RELEASE_NUM is same for all Xumotv platforms.
 #       Deployed ipks for TV-US-Middleware, TV-US-Multilib-Multilib, TV-UK-Middleware, and TV-UK-Multilib-Multilib.
 
-RELEASE_NUM = "RDKEVD-6153_OSS_4_12_0_nml-r8"
+RELEASE_NUM = "RDKEVD-6153_OSS_4_12_0-r8"
 
 MW_IPK_PATH = "middleware-dbg/${RELEASE_NUM}"
 MW_IPK_SERVER_PATH ?= "${RDK_ARTIFACTS_BASE_URL}/${MW_IPK_PATH}/${RDK_MW_ARCH}/ipks/debug"
