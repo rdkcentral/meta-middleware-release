@@ -15,6 +15,8 @@ RELEASE_NUM = "${@ d.getVar('RELEASE_NUM_ML') \
     if d.getVar('RDK_MW_ARCH') == 'rdktv-us-armv8a' \
     else d.getVar('RELEASE_NUM_NML') }"
 
+RELEASE_NUM = ${RELEASE_NUM_NML}
+
 MW_IPK_PATH ?= "middleware-dbg/${RELEASE_NUM}"
 MW_IPK_SERVER_PATH ?= "${RDK_ARTIFACTS_BASE_URL}/${MW_IPK_PATH}/${RDK_MW_ARCH}/ipks/${BUILD_VARIANT}"
 
