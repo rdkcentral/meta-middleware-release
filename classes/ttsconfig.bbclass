@@ -69,7 +69,7 @@ python create_ttsconfig(){
     # Write the JSON file
     config_path = os.path.join(build_path, "ttsConfig.json")
     with open(config_path, "w") as json_file:
-        json.dump(config, json_file, indent=2)
+        json.dump(config, json_file, separators=(',', ':'))
 }
 create_ttsconfig[vardepsexclude] += "DATETIME"
 ROOTFS_POSTPROCESS_COMMAND += 'create_ttsconfig; '
