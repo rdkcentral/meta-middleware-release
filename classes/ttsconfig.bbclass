@@ -1,10 +1,11 @@
-# Creates /etc/entservices/ttsConfig.json configuration files
+# Creates /etc/entservices/ttsConfig.json configuration file
 # for tts plugin from entservices component 
 # with the given configuration values:
 # Field : Value
 #   - endpoint: TEXTTOSPEECH_ENDPOINT
 #   - secureendpoint: TEXTTOSPEECH_SECURE_ENDPOINT
 #   - localendpoint: TEXTTOSPEECH_LOCAL_ENDPOINT
+#   - endpoint_type: TEXTTOSPEECH_ENDPOINT_TYPE
 #   - speechrate: TEXTTOSPEECH_SPEECHRATE
 #   - satplugincallsign: TEXTTOSPEECH_SATPLUGINCALLSIGN
 #   - language: TEXTTOSPEECH_LANGUAGE
