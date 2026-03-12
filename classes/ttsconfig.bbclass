@@ -39,17 +39,16 @@ python create_ttsconfig(){
         "localendpoint": get("TEXTTOSPEECH_LOCAL_ENDPOINT"),
         "speechrate": get("TEXTTOSPEECH_SPEECHRATE"),
         "satplugincallsign": get("TEXTTOSPEECH_SATPLUGINCALLSIGN"),
-        "language": get("TEXTTOSPEECH_LANGUAGE", "en-US"),
+        "language": get("TEXTTOSPEECH_LANGUAGE"),
         "volume": get("TEXTTOSPEECH_VOLUME", 100),
         "rate": get("TEXTTOSPEECH_RATE", 50),
 
         "voices": {
-            "en-US": get("TEXTTOSPEECH_VOICE_FOR_EN", "carol"),
-            "es-MX": get("TEXTTOSPEECH_VOICE_FOR_ES", "Angelica"),
-            "fr-CA": get("TEXTTOSPEECH_VOICE_FOR_FR", "amelie"),
-            "en-GB": get("TEXTTOSPEECH_VOICE_FOR_GB", "en-GB-Standard-N"),
-            "de-DE": get("TEXTTOSPEECH_VOICE_FOR_DE", "de-DE-Standard-G"),
-            "it-IT": get("TEXTTOSPEECH_VOICE_FOR_IT", "it-IT-Standard-E"),
+            "es-MX": get("TEXTTOSPEECH_VOICE_FOR_ES"),
+            "fr-CA": get("TEXTTOSPEECH_VOICE_FOR_FR"),
+            "en-GB": get("TEXTTOSPEECH_VOICE_FOR_GB"),
+            "de-DE": get("TEXTTOSPEECH_VOICE_FOR_DE"),
+            "it-IT": get("TEXTTOSPEECH_VOICE_FOR_IT"),
         },
 
         "local_voices": {
