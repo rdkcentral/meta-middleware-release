@@ -11,18 +11,6 @@
 #   - language: TEXTTOSPEECH_LANGUAGE
 #   - volume: TEXTTOSPEECH_VOLUME
 #   - rate: TEXTTOSPEECH_RATE
-#   - voices.en-US: TEXTTOSPEECH_VOICE_FOR_EN
-#   - voices.es-MX: TEXTTOSPEECH_VOICE_FOR_ES
-#   - voices.fr-CA: TEXTTOSPEECH_VOICE_FOR_FR
-#   - voices.en-GB: TEXTTOSPEECH_VOICE_FOR_GB
-#   - voices.de-DE: TEXTTOSPEECH_VOICE_FOR_DE
-#   - voices.it-IT: TEXTTOSPEECH_VOICE_FOR_IT
-#   - local_voices.en-US: TEXTTOSPEECH_LOCALVOICE_FOR_EN
-#   - local_voices.es-MX: TEXTTOSPEECH_LOCALVOICE_FOR_ES
-#   - local_voices.fr-CA: TEXTTOSPEECH_LOCALVOICE_FOR_FR
-#   - local_voices.en-GB: TEXTTOSPEECH_LOCALVOICE_FOR_GB
-#   - local_voices.de-DE: TEXTTOSPEECH_LOCALVOICE_FOR_DE
-#   - local_voices.it-IT: TEXTTOSPEECH_LOCALVOICE_FOR_IT
 # Field values should be configured in product layer.
 
 python create_ttsconfig(){
