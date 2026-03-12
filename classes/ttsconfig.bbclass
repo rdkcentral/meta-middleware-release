@@ -44,6 +44,7 @@ python create_ttsconfig(){
         "rate": get("TEXTTOSPEECH_RATE", 50),
 
         "voices": {
+            "en-US": get("TEXTTOSPEECH_VOICE_FOR_EN"),
             "es-MX": get("TEXTTOSPEECH_VOICE_FOR_ES"),
             "fr-CA": get("TEXTTOSPEECH_VOICE_FOR_FR"),
             "en-GB": get("TEXTTOSPEECH_VOICE_FOR_GB"),
