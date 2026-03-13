@@ -34,8 +34,10 @@ python create_mediariteproductconfig(){
     config_path = os.path.join(build_path, "mediarite-product.cfg")
     with open(config_path, "w") as file:
         file.write("[YConfig]\n")
-        for key, value in config.items():
+        for key in sorted(config):
+            value = config[key]
             file.write(f"{key}={value}\n")
+    os.chmod(config_path, 0o644)
 }
 create_mediariteproductconfig[vardepsexclude] += "DATETIME"
 ROOTFS_POSTPROCESS_COMMAND += 'create_mediariteproductconfig; '
