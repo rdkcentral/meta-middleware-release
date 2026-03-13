@@ -7,10 +7,9 @@ PACKAGE_EXTRA_ARCHS:append = " ${MIDDLEWARE_ARCH}"
 
 
 # Conditional release number
-# MW develop 07/04/2026 base:8.5.3.0  + OSS 4.12.2 + custome vendor ipks(07/04/2026) with oss 4.12.2
+# MW base : 8.5.3.0  + OSS 4.12.2 + custome vendor ipks(07/04/2026) with oss 4.12.2
 # PR : https://github.com/rdk-e/rdke-middleware-manifest/pull/6985
-# MW manifest SHA: 2c530d467ce76f6be9300f26cb2ff8b050d6558f
-# META_PATCHSET: meta-rdk-video 570776da773c8a33324f10e489fe52bb0fd428b0
+# MW manifest SHA: 905b0e466c5264adb1a23eb6f43f1be04a4811d2
 # Deployed ipks for tv-us-middleware-mtk
 
 RELEASE_NUM = "RDKEVD-6333_OSS_4_12_2-r4"
