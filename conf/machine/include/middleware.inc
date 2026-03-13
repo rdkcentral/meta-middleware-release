@@ -7,13 +7,13 @@ PACKAGE_EXTRA_ARCHS:append = " ${MIDDLEWARE_ARCH}"
 
 
 # Conditional release number
-# MW develop 07/04/2026 base:a97848cb0d8575bf3004091191a01d5ecdf169ef  + OSS 4.12.2 + custome vendor ipks(07/04/2026) with oss 4.12.2
-# PR : https://github.com/rdk-e/rdke-middleware-manifest/pull/6886
-# MW manifest SHA: fbe409eb94037b4571f2430c6f5201f607b4d3cb
-# META_PATCHSET: meta-rdk-video 1afcacb1ed4bba0aec1e72e4399f05699c114e0a
+# MW develop 07/04/2026 base:8.5.3.0  + OSS 4.12.2 + custome vendor ipks(07/04/2026) with oss 4.12.2
+# PR : https://github.com/rdk-e/rdke-middleware-manifest/pull/6985
+# MW manifest SHA: 2c530d467ce76f6be9300f26cb2ff8b050d6558f
+# META_PATCHSET: meta-rdk-video 570776da773c8a33324f10e489fe52bb0fd428b0
 # Deployed ipks for tv-us-middleware-mtk
 
-RELEASE_NUM = "RDKEVD-6333_OSS_4_12_2-r3"
+RELEASE_NUM = "RDKEVD-6333_OSS_4_12_2-r4"
 
 MW_IPK_PATH ?= "middleware-dbg/${RELEASE_NUM}"
 MW_IPK_SERVER_PATH ?= "${RDK_ARTIFACTS_BASE_URL}/${MW_IPK_PATH}/${RDK_MW_ARCH}/ipks/debug"
