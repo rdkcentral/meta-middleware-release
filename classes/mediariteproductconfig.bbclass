@@ -9,12 +9,14 @@ python create_mediariteproductconfig(){
 
     config = {}
 
+    # Build a sorted, deduplicated list of MRITE_ base variable names (overrides stripped)
+    mrite_vars = sorted({var.split(":")[0] for var in d.keys() if var.startswith("MRITE_")})
+
     # Add all Mediarite specific variables that start with MRITE_ to the config
-    for var in d.keys():
-        if var.startswith("MRITE_"):
-            value = d.getVar(var, True)
-            if value:
-                config[var[len("MRITE_"):]] = value
+    for var in mrite_vars:
+        value = d.getVar(var, True)
+        if value:
+            config[var[len("MRITE_"):]] = value
 
     # If DEFAULT_REGION_ALPHA2 is not already set, add DEFAULT_REGION_ALPHA2 based on COUNTRY_CODE
     if "DEFAULT_REGION_ALPHA2" not in config:
