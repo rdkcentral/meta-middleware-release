@@ -19,3 +19,6 @@ IMAGE_CLASSES += "bootfsrconfig"
 
 # /etc/mediarite/mediarite-product.cfg
 IMAGE_CLASSES += "mediariteproductconfig"
+
+# /etc/entservices/ttsConfig.json
+IMAGE_CLASSES += "ttsconfig"
