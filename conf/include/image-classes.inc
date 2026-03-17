@@ -16,3 +16,6 @@ IMAGE_CLASSES += "authservice-config"
 
 # /etc/migration/boot_FSR.platform
 IMAGE_CLASSES += "bootfsrconfig"
+
+# /etc/entservices/ttsConfig.json
+IMAGE_CLASSES += "ttsconfig"
