@@ -54,5 +54,13 @@ python create_socprovisioning_config() {
                 f.write(line)
     os.chmod(ini_path, 0o644)
 }
-create_socprovisioning_config[vardepsexclude] += "DATETIME"
+do_rootfs[vardeps] += " \
+    SocProvisioningActivation \
+    SocProvisioningRenewal \
+    SocProvisioningNameSpaceUri \
+    SocProvisioningNameSpacePrefix \
+    SocProvisioningAuthMessage \
+    SocProvisioningdisableCredentialsPrefetchCaching \
+    SocProvisioningbackoffIntervalMax \
+"
 ROOTFS_POSTPROCESS_COMMAND += 'create_socprovisioning_config; '
