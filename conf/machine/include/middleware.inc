@@ -14,3 +14,4 @@ IPK_FEED_URIS += " \
                 ${MIDDLEWARE_ARCH}##${MW_IPK_SERVER_PATH} "
 
 include ${@'oss_mw.inc' if 'STACK_LAYER_OSS_SUPPORT' in d.getVar('DISTRO_FEATURES').split() else ''}
+MW_IPK_PATH ?= "middleware-dbg/RDKEMW-16989-a"
