@@ -22,3 +22,6 @@ IMAGE_CLASSES += "ttsconfig"
 
 # /etc/mediarite/mediarite-product.cfg
 IMAGE_CLASSES += "mediariteproductconfig"
+
+# Install /etc/appinfraversion.txt
+IMAGE_CLASSES += "appinfraversion"
