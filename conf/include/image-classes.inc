@@ -22,3 +22,6 @@ IMAGE_CLASSES += "ttsconfig"
 
 # /etc/mediarite/mediarite-product.cfg
 IMAGE_CLASSES += "mediariteproductconfig"
+
+# /etc/rfcdefaults/socprovisioning.ini
+IMAGE_CLASSES += "socprovisioning-config"
