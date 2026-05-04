@@ -9,12 +9,8 @@ RELEASE_NUM = "8.6.1.0"
 
 #MW_IPK_PATH ?= "middleware-rel/${RELEASE_NUM}"
 #MW_IPK_SERVER_PATH ?= "${RDK_ARTIFACTS_BASE_URL}/${MW_IPK_PATH}/${RDK_MW_ARCH}/ipks/${BUILD_VARIANT}"
-<<<<<<< HEAD
-MW_IPK_SERVER_PATH = "https://partners.artifactory.comcast.com/artifactory/middleware-dbg/RDKEMW-13582_aamp_Multilib_polaris/rdktv-us-armv8a/ipks/debug"
-=======
 #MW_IPK_SERVER_PATH = "https://partners.artifactory.comcast.com/artifactory/middleware-dbg/RDKEMW-13582_aamp_Multilib_polaris/rdktv-us-armv8a/ipks/debug"
 MW_IPK_SERVER_PATH = "middleware-dbg/RDKEMW-13582_aamp_Multilib_polaris"
->>>>>>> e74cdfe (Adding the new IPK path)
 
 IPK_FEED_URIS += " \ 
                 ${MIDDLEWARE_ARCH}##${MW_IPK_SERVER_PATH} "
