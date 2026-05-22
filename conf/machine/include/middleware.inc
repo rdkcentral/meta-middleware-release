@@ -5,9 +5,17 @@ RDK_MW_ARCH ??= "${MACHINE}"
 MIDDLEWARE_ARCH = "${RDK_MW_ARCH}-middleware"
 PACKAGE_EXTRA_ARCHS:append = " ${MIDDLEWARE_ARCH}"
 
-RELEASE_NUM = "8.6.1.0"
+# MW from develop( 8.6.1.0 ++) + integrated OSS 4.13.0 + vendor ipks(with OSS 4.13.0)
+# ++ there are 2 dependent meta MW layer changes from 
+# 1. meta-rdk(PR#655) bce224d22d32648ca98e7135a206f4b17cf3cd7b and
+# 2. meta-rdk-video(PR#2662) c900e4998d3ab4ea680c6b7422b40cd046e56430
+# MW base SHA used from develop: 245fa07e7d0890b30761b8e43034481b2b9a8748
+# MW PR: https://github.com/rdk-e/rdke-middleware-manifest/pull/7486
+# MW PR#7486 SHA used in deploying ipks: c47deb28dea199862e657f9115b6a27f31cbed1b
 
-MW_IPK_PATH ?= "middleware-rel/${RELEASE_NUM}"
+RELEASE_NUM = "RDKEVD-7510-r0"
+
+MW_IPK_PATH ?= "middleware-dbg/${RELEASE_NUM}"
 MW_IPK_SERVER_PATH ?= "${RDK_ARTIFACTS_BASE_URL}/${MW_IPK_PATH}/${RDK_MW_ARCH}/ipks/${BUILD_VARIANT}"
 
 IPK_FEED_URIS += " \ 
