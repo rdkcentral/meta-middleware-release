@@ -7,7 +7,7 @@ PACKAGE_EXTRA_ARCHS:append = " ${MIDDLEWARE_ARCH}"
 
 RELEASE_NUM = "8.6.2.0"
 
-MW_IPK_PATH ?= "middleware-dbg/RDKEMW-19263_enable_vnc_dev_B"
+MW_IPK_PATH ?= "middleware-dbg/RDKEMW-19263_enable_vnc_dev_C"
 
 MW_IPK_SERVER_PATH ?= "${RDK_ARTIFACTS_BASE_URL}/${MW_IPK_PATH}/${RDK_MW_ARCH}/ipks/${BUILD_VARIANT}"
 
