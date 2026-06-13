@@ -6,5 +6,5 @@ SRC_URI[sha256sum] = "a31f1a784c1aeabd8988201ac82f172129e47dde9043b4e08f0ca11d8b
 MW_OSS_IPK_PATH ?= "middleware-rel/${RELEASE_NUM}"
 #MW_OSS_IPK_SERVER_PATH = "${RDK_ARTIFACTS_BASE_URL}/${MW_OSS_IPK_PATH}/${RDK_MW_ARCH}/${MW_OSS}/ipks/${BUILD_VARIANT}"
 MW_OSS_IPK_SERVER_PATH = "${RDK_ARTIFACTS_BASE_URL}/middleware-dbg/RDKOSS-974-test1/${RDK_MW_ARCH}/${MW_OSS}/ipks/${BUILD_VARIANT}"
-CVE_LAYER_FEED_PATH += " ${MW_OSS}##${RDK_ARTIFACTS_BASE_URL}/middleware-dbg/RDKOSS-974-test1/${RDK_MW_ARCH}/tarball/cve/debug/rdk-arm7ve-oss-middleware.tgz;sha256sum=645afe53d44c49799534e6c2a5188cb5fb0db7fde7d91d8b2e162cf34f41186f" 
+CVE_LAYER_FEED_PATH += " ${MW_OSS}##${RDK_ARTIFACTS_BASE_URL}/middleware-dbg/RDKOSS-974-test1/${RDK_MW_ARCH}/tarball/cve/debug/rdk-arm7ve-oss-middleware.tgz;sha256sum=a31f1a784c1aeabd8988201ac82f172129e47dde9043b4e08f0ca11d8be2bfba" 
 IPK_FEED_URIS += " ${MW_OSS}##${MW_OSS_IPK_SERVER_PATH} "
