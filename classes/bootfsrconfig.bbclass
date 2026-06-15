@@ -7,7 +7,7 @@ python create_bootfsrconfig(){
     import os
     boot_fsr_platform = (d.getVar('BOOT_FSR_PLATFORM') or '').strip().lower()
 
-    if boot_fsr_platform in ['flex', 'xumotv']:
+    if boot_fsr_platform in ['flex', 'xumotv', 'flexxi6']:
         bb.warn("BOOT_FSR_PLATFORM is set, boot_FSR.platform file is included in the build!")
         output_dir = d.getVar("IMAGE_ROOTFS", True)
         build_path = os.path.join(output_dir, "etc", "migration")
