@@ -1,6 +1,6 @@
 # To support layered ipk generation
 
-RDK_MW_ARCH ??= "${MACHINE}"
+RDK_MW_ARCH ??= "xione-uk"
 
 MIDDLEWARE_ARCH = "${RDK_MW_ARCH}-middleware"
 PACKAGE_EXTRA_ARCHS:append = " ${MIDDLEWARE_ARCH}"
