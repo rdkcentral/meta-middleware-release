@@ -13,7 +13,7 @@ RELEASE_NUM = "RDKEVD-8015-r0"
 # 2. meta-rdk-video(PR#2662) c900e4998d3ab4ea680c6b7422b40cd046e56430
 # MW base SHA used from develop: c99b6593a362a223e95603cafc787b90885b04bc
 # MW PR: https://github.com/rdk-e/rdke-middleware-manifest/pull/7783
-# MW PR#7783 SHA used in deploying ipks: 68d084d638757c655a99555eaf170ab652bca3a5
+# MW PR#7783 SHA used in deploying ipks: f0d8d40bf82d8e059207ac1cf22ed041b83ba05c
 
 MW_IPK_PATH ?= "middleware-dbg/${RELEASE_NUM}"
 MW_IPK_SERVER_PATH ?= "${RDK_ARTIFACTS_BASE_URL}/${MW_IPK_PATH}/${RDK_MW_ARCH}/ipks/debug"
