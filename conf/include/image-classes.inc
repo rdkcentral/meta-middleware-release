@@ -25,3 +25,6 @@ IMAGE_CLASSES += "mediariteproductconfig"
 
 # /etc/rfcdefaults/socprovisioning.ini
 IMAGE_CLASSES += "socprovisioning-config"
+
+#/etc/systimemgr.conf
+IMAGE_CLASSES += "systimemgrconfig"
