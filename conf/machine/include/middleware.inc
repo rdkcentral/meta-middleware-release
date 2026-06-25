@@ -8,7 +8,10 @@ PACKAGE_EXTRA_ARCHS:append = " ${MIDDLEWARE_ARCH}"
 RELEASE_NUM = "8.6.2.0"
 
 MW_IPK_PATH ?= "middleware-rel/${RELEASE_NUM}"
-MW_IPK_SERVER_PATH ?= "${RDK_ARTIFACTS_BASE_URL}/${MW_IPK_PATH}/${RDK_MW_ARCH}/ipks/${BUILD_VARIANT}"
+#MW_IPK_SERVER_PATH ?= "${RDK_ARTIFACTS_BASE_URL}/${MW_IPK_PATH}/${RDK_MW_ARCH}/ipks/${BUILD_VARIANT}"
+#MW_IPK_SERVER_PATH = "file:///home/cbicco888/APCHE_middle/build-rdktv-us-armv7a/tmp-debug/deploy/ipk/rdktv-us-armv7a-middleware"
+
+MW_IPK_SERVER_PATH = "https://partners.artifactory.comcast.com/artifactory/middleware-dbg/RDKEMW-20254-test1/rdktv-us-armv7a/ipks/debug"
 
 IPK_FEED_URIS += " \ 
                 ${MIDDLEWARE_ARCH}##${MW_IPK_SERVER_PATH} "
