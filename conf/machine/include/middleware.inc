@@ -7,7 +7,7 @@ PACKAGE_EXTRA_ARCHS:append = " ${MIDDLEWARE_ARCH}"
 
 RELEASE_NUM = "8.6.3.0_B6"
 
-MW_IPK_PATH ?= "middleware-dbg/tv-us-multlib-apache4k-mw-bluez-09jul2026"
+MW_IPK_PATH ?= "middleware-dbg/tv-us-multlib-apache4k-mw2-bluez-09jul2026"
 MW_IPK_SERVER_PATH ?= "${RDK_ARTIFACTS_BASE_URL}/${MW_IPK_PATH}/${RDK_MW_ARCH}/ipks/${BUILD_VARIANT}"
 
 IPK_FEED_URIS += " \ 
