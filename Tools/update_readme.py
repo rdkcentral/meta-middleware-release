@@ -151,8 +151,6 @@ def hyperlink_constructor(pkg, base_url, version):
             org, repo = repo_match.groups()
             # Trim -r... suffix from version for tag
             trimmed_version = re.sub(r'-r\d+$', '', version)
-            trimmed_version = re.sub(r'([_\w\d]+)-r\d+$', r'\1', trimmed_version)
-            trimmed_version = re.sub(r'-r\d+$', '', trimmed_version)
             log.debug(f"Checking GitHub tag {trimmed_version} for {pkg} in repo {repo}")
             matched_tag = find_github_tag(org, repo, trimmed_version)
             if matched_tag:
@@ -236,7 +234,7 @@ def fetch_manifest_xml(manifest_url):
     try:
         resp = requests.get(manifest_url, timeout=10)
         if resp.status_code != 200:
-            log.error(f"Failed to fetch manifest XML from {manifest_url}")
+            log.error(f"Failed to fetch manifest XML from {manifest_url} (status={resp.status_code})")
             sys.exit(1)
         return resp.text
     except requests.exceptions.Timeout:
@@ -327,14 +325,18 @@ def main():
     conf_path = "Tools/release_information.conf"
     release_info = {}
     log.info(f"Reading release information from {conf_path}")
-    with io.open(conf_path, 'r', encoding='utf-8') as conf_file:
-        for line in conf_file:
-            line = line.strip()
-            if not line or line.startswith('#'):
-                continue
-            if '=' in line:
-                k, v = line.split('=', 1)
-                release_info[k.strip()] = v.strip()
+    try:
+        with io.open(conf_path, 'r', encoding='utf-8') as conf_file:
+            for line in conf_file:
+                line = line.strip()
+                if not line or line.startswith('#'):
+                    continue
+                if '=' in line:
+                    k, v = line.split('=', 1)
+                    release_info[k.strip()] = v.strip()
+    except Exception as e:
+        log.error(f"Error reading {conf_path}: {e}")
+        sys.exit(1)
 
     # Check required variables
     missing_vars = []
