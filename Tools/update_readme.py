@@ -17,7 +17,6 @@
 # limitations under the License.
 ##########################################################################
 
-from __future__ import print_function
 import sys
 import io
 import requests
@@ -91,6 +90,7 @@ def find_github_tag(org, repo, tag):
 
     # Check each candidate tag directly via git refs.
     # This avoids paginating /tags and also avoids separate /releases probes.
+    saw_transient_issue = False
     for candidate in candidates:
         candidate_ref = requests.utils.quote(candidate, safe='')
         url = f"https://api.github.com/repos/{org}/{repo}/git/ref/tags/{candidate_ref}"
@@ -109,15 +109,17 @@ def find_github_tag(org, repo, tag):
                 return None
             if resp.status_code in (403, 429):
                 log.error("API rate limit exceeded or access forbidden. Try using GITHUB_API_TOKEN or try again later.")
-                with TAG_LOOKUP_CACHE_LOCK:
-                    TAG_LOOKUP_CACHE[cache_key] = None
                 return None
             log.debug(f"Unexpected status checking git ref for tag {candidate}: {resp.status_code}")
+            saw_transient_issue = True
         except requests.exceptions.RequestException as e:
             log.debug(f"Request error checking git ref for tag {candidate}: {e}")
+            saw_transient_issue = True
             continue
-    with TAG_LOOKUP_CACHE_LOCK:
-        TAG_LOOKUP_CACHE[cache_key] = None
+    # Cache negative results only for definitive misses (all candidates returned 404).
+    if not saw_transient_issue:
+        with TAG_LOOKUP_CACHE_LOCK:
+            TAG_LOOKUP_CACHE[cache_key] = None
     return None
 
 # Hyperlink package versions in PackagesAndVersions.md
@@ -289,8 +291,11 @@ def parse_manifest(xml_text, manifest_url, release_tag, processed_manifests=None
         if inc_remote and inc_remote in remote_table:
             fetch_url = remote_table[inc_remote]
         else:
-            # Use current manifest's repo URL
-            fetch_url = manifest_url.rsplit('/', 2)[0]  # up to repo/tag
+            # Use current manifest's repo URL (repository root, without tag/file)
+            fetch_url = manifest_url.rsplit('/', 2)[0]
+        # Convert github.com to raw.githubusercontent.com for fetching manifests
+        if fetch_url.startswith("https://github.com"):
+            fetch_url = fetch_url.replace("https://github.com", "https://raw.githubusercontent.com")
         # Build manifest URL
         url = f"{fetch_url}/{inc_tag}/{inc_name}"
         inc_xml = fetch_manifest_xml(url)
@@ -367,7 +372,11 @@ def main():
 
     manifest_url = f"{fetch_base_url}/{release_version}/{manifest_name}"
     xml_text = fetch_manifest_xml(manifest_url)
-    remote_table, project_table = parse_manifest(xml_text, manifest_url, release_version)
+    try:
+        remote_table, project_table = parse_manifest(xml_text, manifest_url, release_version)
+    except RuntimeError as e:
+        log.error(str(e))
+        sys.exit(1)
 
     # Format project table for README: Name | Revision/Tag Link (GitHub: link, else plain)
     project_rows = []
