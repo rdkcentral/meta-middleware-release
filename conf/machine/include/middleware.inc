@@ -7,7 +7,7 @@ PACKAGE_EXTRA_ARCHS:append = " ${MIDDLEWARE_ARCH}"
 
 RELEASE_NUM = "8.5.3.0.2"
 
-MW_IPK_PATH ?= "middleware-dbg/mtk-mw-bluez-refactor-20jul2026"
+MW_IPK_PATH ?= "middleware-dbg/btname-mtk-mw-bluez-refactor-22jul2026"
 MW_IPK_SERVER_PATH ?= "${RDK_ARTIFACTS_BASE_URL}/${MW_IPK_PATH}/${RDK_MW_ARCH}/ipks/${BUILD_VARIANT}"
 
 IPK_FEED_URIS += " \ 
