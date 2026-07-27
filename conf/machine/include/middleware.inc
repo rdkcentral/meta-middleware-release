@@ -10,7 +10,7 @@ RELEASE_NUM = "8.6.2.0"
 MW_IPK_PATH ?= "middleware-rel/${RELEASE_NUM}"
 #MW_IPK_SERVER_PATH ?= "${RDK_ARTIFACTS_BASE_URL}/${MW_IPK_PATH}/${RDK_MW_ARCH}/ipks/${BUILD_VARIANT}"
 MW_IPK_SERVER_PATH ?= "${RDK_ARTIFACTS_BASE_URL}/middleware-dbg/RDKOSS-974-Element/${RDK_MW_ARCH}/ipks/${BUILD_VARIANT}"
-CVE_LAYER_FEED_PATH += " ${MIDDLEWARE_ARCH}##${RDK_ARTIFACTS_BASE_URL}/middleware-dbg/RDKOSS-974-Element/${RDK_MW_ARCH}/tarball/cve/debug/rdktv-us-armv7a-middleware.tgz;sha256sum=93c10a470a969e2afd85af6a407c60663a9f7ac1cf1ba5b8dfb6bc612504711d"
+CVE_LAYER_FEED_PATH += " ${MIDDLEWARE_ARCH}##${RDK_ARTIFACTS_BASE_URL}/middleware-dbg/RDKOSS-974-Element/${RDK_MW_ARCH}/tarball/cve/debug/rdktv-us-armv7a-middleware.tgz;sha256sum=a4931b62a827c5b74ac51703407cdcf3e5156e3ad18d53475dc1c06363782d4d"
 
 IPK_FEED_URIS += " \ 
                 ${MIDDLEWARE_ARCH}##${MW_IPK_SERVER_PATH} "
