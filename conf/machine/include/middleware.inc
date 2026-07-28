@@ -15,4 +15,4 @@ IPK_FEED_URIS += " \
 
 include ${@'oss_mw.inc' if 'STACK_LAYER_OSS_SUPPORT' in d.getVar('DISTRO_FEATURES').split() else ''}
 
-CVE_LAYER_FEED_PATH += "https://partners.artifactory.comcast.com/artifactory/middleware-dbg/RDKEVD-6147-mw-t3/rdktv-us-armv8a/tarball/cve/debug/rdktv-us-armv8a-middleware.tgz;sha256sum=1cbb6d4534c7f18c699b642a9edece77575b25e387e9bcc19d4325969e346b18"
+CVE_LAYER_FEED_PATH += "${MIDDLEWARE_ARCH}##${RDK_ARTIFACTS_BASE_URL}/middleware-dbg/RDKEVD-6147-mw-t3/rdktv-us-armv8a/tarball/cve/debug/rdktv-us-armv8a-middleware.tgz;sha256sum=1cbb6d4534c7f18c699b642a9edece77575b25e387e9bcc19d4325969e346b18"
