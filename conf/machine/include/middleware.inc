@@ -7,7 +7,8 @@ PACKAGE_EXTRA_ARCHS:append = " ${MIDDLEWARE_ARCH}"
 
 RELEASE_NUM = "8.7.1.0"
 
-BUILD_VARIANT = "${@'prod' if d.getVar('BUILD_VARIANT') == 'signedlab' else d.getVar('BUILD_VARIANT')}"
+BUILD_VARIANT_ORIG := "${BUILD_VARIANT}"
+BUILD_VARIANT = "${@'prod' if '${BUILD_VARIANT_ORIG}' == 'signedlab' else '${BUILD_VARIANT_ORIG}'}"
 
 MW_IPK_PATH ?= "middleware-rel/${RELEASE_NUM}"
 MW_IPK_SERVER_PATH ?= "${RDK_ARTIFACTS_BASE_URL}/${MW_IPK_PATH}/${RDK_MW_ARCH}/ipks/${BUILD_VARIANT}"
