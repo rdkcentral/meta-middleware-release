@@ -8,7 +8,4 @@ IPK_FEED_URIS += " ${MW_OSS}##${MW_OSS_IPK_SERVER_PATH} "
 
 #CVE Feed Path
 
-MW_OSS_CVE_SHA:prod-variant ?= "e17d1f035b648624b04ce3c5b47216ad7fbbee8734da39d6bf09393845a538c9"
-MW_OSS_CVE_SHA:prodlog-variant ?= "b00e1f9e168d89d04d0718ba5f641c6b65b019bda6e3ad39ffe0c41b28eebaa3"
-MW_OSS_CVE_SHA = "5182ff7e579bd43df044b3b913142c4e264134ff8a09cc1fd92224b40be863f5"
-CVE_LAYER_FEED_PATH:append = " ${@bb.utils.contains('INHERIT', 'cve-check', '${MW_OSS}##${RDK_ARTIFACTS_BASE_URL}/${MW_OSS_IPK_PATH}/${RDK_MW_ARCH}/${CVE_PATH}/${BUILD_VARIANT}/${MW_OSS}.tgz;sha256sum=${MW_OSS_CVE_SHA}', '', d)} "
+CVE_LAYER_FEED_PATH:append = " ${@bb.utils.contains('INHERIT', 'cve-check', '${MW_OSS}##${RDK_ARTIFACTS_BASE_URL}/${MW_OSS_IPK_PATH}/${RDK_MW_ARCH}/${CVE_PATH}/${BUILD_VARIANT}/${MW_OSS}.tgz', '', d)} "
