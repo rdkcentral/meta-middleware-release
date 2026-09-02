@@ -8,7 +8,7 @@ PACKAGE_EXTRA_ARCHS:append = " ${MIDDLEWARE_ARCH}"
 RELEASE_NUM = "RDKEMW-24246_2"
 
 MW_IPK_PATH ?= "middleware-dbg/${RELEASE_NUM}"
-MW_IPK_SERVER_PATH ?= "${RDK_ARTIFACTS_BASE_URL}/${MW_IPK_PATH}/xione-uk/rdk-arm7ve-oss-middleware/ipks/${BUILD_VARIANT}"
+MW_IPK_SERVER_PATH ?= "${RDK_ARTIFACTS_BASE_URL}/${MW_IPK_PATH}/xione-uk/ipks/${BUILD_VARIANT}"
 
 IPK_FEED_URIS += " \ 
                 ${MIDDLEWARE_ARCH}##${MW_IPK_SERVER_PATH} "
