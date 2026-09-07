@@ -8,7 +8,7 @@ PACKAGE_EXTRA_ARCHS:append = " ${MIDDLEWARE_ARCH}"
 RELEASE_NUM = "8.7.1.0"
 
 MW_IPK_PATH ?= "middleware-rel/${RELEASE_NUM}"
-MW_IPK_SERVER_PATH ?= "https://partners.artifactory.comcast.com/artifactory/middleware-dbg/DTM-4999-r1/${RDK_MW_ARCH}/ipks/debug/"
+MW_IPK_SERVER_PATH ?= "https://partners.artifactory.comcast.com/artifactory/middleware-dbg/DTMIN-180-r0/${RDK_MW_ARCH}/ipks/debug/"
 
 IPK_FEED_URIS += " \ 
                 ${MIDDLEWARE_ARCH}##${MW_IPK_SERVER_PATH} "
