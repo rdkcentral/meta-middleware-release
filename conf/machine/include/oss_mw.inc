@@ -22,7 +22,7 @@ python __anonymous() {
         if not d.getVar("CVE_LAYER_COMMON_PATH_MIDDLEWARE"):
             d.setVar("CVE_LAYER_COMMON_PATH_MIDDLEWARE", "${MW_OSS_IPK_PATH}")
 
-        d.setVar("CVE_FEED_URL_MWOSS", "${MW_OSS}##${RDK_ARTIFACTS_BASE_URL}/${CVE_LAYER_COMMON_PATH_MIDDLEWARE}/${RDK_MW_ARCH}/tarball/cve/${BUILD_VARIANT}/${MW_OSS}.tgz")
+        d.setVar("CVE_FEED_URL_MWOSS", "${MW_OSS}##${RDK_ARTIFACTS_BASE_URL}/${CVE_LAYER_COMMON_PATH_MIDDLEWARE}/xione-uk/tarball/cve/${BUILD_VARIANT}/${MW_OSS}.tgz")
         d.appendVar("CVE_LAYER_FEED_PATH", " ${CVE_FEED_URL_MWOSS};sha256sum=${MW_OSS_SHA256SUM}")
 
 }
