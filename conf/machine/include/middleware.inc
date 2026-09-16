@@ -5,6 +5,12 @@ RDK_MW_ARCH ??= "${MACHINE}"
 MIDDLEWARE_ARCH = "${RDK_MW_ARCH}-middleware"
 PACKAGE_EXTRA_ARCHS:append = " ${MIDDLEWARE_ARCH}"
 
+#MW is taken from develop(8.7.2.0 ++) 15th September 2026
+#Base develop SHA used from develop is 0c07d7779f8e07f7ed7ca2e2062af01cf24a0751
+#MW PR is https://github.com/rdk-e/rdke-middleware-manifest/pull/8600
+#MW SHA used for deploying MW ipks is 2772bd74d007ce6817eac0b51c94bf98b4673ffe
+#Vendor ipks consumed in MW are from release/8.7-3.0.0
+
 RELEASE_NUM = "RDKEVD-9291-r0"
 
 MW_IPK_PATH ?= "middleware-dbg/${RELEASE_NUM}"
