@@ -7,7 +7,7 @@ PACKAGE_EXTRA_ARCHS:append = " ${MIDDLEWARE_ARCH}"
 
 RELEASE_NUM = "8.7.2.0"
 
-MW_IPK_PATH ?= "middleware-dbg/RDKEVD-9377_develop_mw"
+MW_IPK_PATH ?= "middleware-dbg/RDKEVD-9377_develop"
 MW_IPK_SERVER_PATH ?= "${RDK_ARTIFACTS_BASE_URL}/${MW_IPK_PATH}/${RDK_MW_ARCH}/ipks/${BUILD_VARIANT}"
 
 IPK_FEED_URIS += " \ 
