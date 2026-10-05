@@ -9,7 +9,8 @@ RELEASE_NUM = "8.7.1.0"
 
 MW_IPK_PATH ?= "middleware-rel/${RELEASE_NUM}"
 #MW_IPK_SERVER_PATH ?= "${RDK_ARTIFACTS_BASE_URL}/${MW_IPK_PATH}/${RDK_MW_ARCH}/ipks/${BUILD_VARIANT}"
-MW_IPK_SERVER_PATH ?= "https://partners.artifactory.comcast.com/artifactory/middleware-dbg/RDKEMW-24124-Fix/rdktv-us-armv7a/ipks/debug"
+#MW_IPK_SERVER_PATH ?= "https://partners.artifactory.comcast.com/artifactory/middleware-dbg/RDKEMW-24124-Fix/rdktv-us-armv7a/ipks/debug"
+MW_IPK_SERVER_PATH ?= "https://partners.artifactory.comcast.com/artifactory/middleware-dbg/RDKEMW-24124-Crash/rdktv-us-armv8a/ipks/debug"
 IPK_FEED_URIS += " \ 
                 ${MIDDLEWARE_ARCH}##${MW_IPK_SERVER_PATH} "
 
