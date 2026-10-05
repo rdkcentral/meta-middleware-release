@@ -5,10 +5,10 @@ RDK_MW_ARCH ??= "${MACHINE}"
 MIDDLEWARE_ARCH = "${RDK_MW_ARCH}-middleware"
 PACKAGE_EXTRA_ARCHS:append = " ${MIDDLEWARE_ARCH}"
 
-RELEASE_NUM = "8.7.2.0"
+RELEASE_NUM = "8.7.3.0_B3"
 
-MW_IPK_PATH ?= "middleware-rel/${RELEASE_NUM}"
-MW_IPK_SERVER_PATH ?= "${RDK_ARTIFACTS_BASE_URL}/${MW_IPK_PATH}/${RDK_MW_ARCH}/ipks/${BUILD_VARIANT}"
+MW_IPK_PATH ?= "middleware-dbg/${RELEASE_NUM}"
+MW_IPK_SERVER_PATH ?= "${RDK_ARTIFACTS_BASE_URL}/middleware-dbg/RDKEMW-26007-1/rdktv-uk-armv7a/ipks/debug"
 
 IPK_FEED_URIS += " \ 
                 ${MIDDLEWARE_ARCH}##${MW_IPK_SERVER_PATH} "
