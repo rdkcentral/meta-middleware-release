@@ -20,6 +20,10 @@ python create_ttsconfig(){
     def get(var, default=""):
         return d.getVar(var, True) or default
 
+    def voice_list(var):
+        value = get(var, "") or ""
+        return [v.strip() for v in value.split(",") if v.strip()]
+
     config = {
         "endpoint": get("TEXTTOSPEECH_ENDPOINT"),
         "secureendpoint": get("TEXTTOSPEECH_SECURE_ENDPOINT"),
@@ -32,21 +36,21 @@ python create_ttsconfig(){
         "rate": get("TEXTTOSPEECH_RATE", 50),
 
         "voices": {
-            "en-US": get("TEXTTOSPEECH_VOICE_FOR_EN"),
-            "es-MX": get("TEXTTOSPEECH_VOICE_FOR_ES"),
-            "fr-CA": get("TEXTTOSPEECH_VOICE_FOR_FR"),
-            "en-GB": get("TEXTTOSPEECH_VOICE_FOR_GB"),
-            "de-DE": get("TEXTTOSPEECH_VOICE_FOR_DE"),
-            "it-IT": get("TEXTTOSPEECH_VOICE_FOR_IT"),
+            "en-US": voice_list("TEXTTOSPEECH_VOICE_FOR_EN"),
+            "es-MX": voice_list("TEXTTOSPEECH_VOICE_FOR_ES"),
+            "fr-CA": voice_list("TEXTTOSPEECH_VOICE_FOR_FR"),
+            "en-GB": voice_list("TEXTTOSPEECH_VOICE_FOR_GB"),
+            "de-DE": voice_list("TEXTTOSPEECH_VOICE_FOR_DE"),
+            "it-IT": voice_list("TEXTTOSPEECH_VOICE_FOR_IT"),
         },
 
         "local_voices": {
-            "en-US": get("TEXTTOSPEECH_LOCALVOICE_FOR_EN"),
-            "es-MX": get("TEXTTOSPEECH_LOCALVOICE_FOR_ES"),
-            "fr-CA": get("TEXTTOSPEECH_LOCALVOICE_FOR_FR"),
-            "en-GB": get("TEXTTOSPEECH_LOCALVOICE_FOR_GB"),
-            "de-DE": get("TEXTTOSPEECH_LOCALVOICE_FOR_DE"),
-            "it-IT": get("TEXTTOSPEECH_LOCALVOICE_FOR_IT"),
+            "en-US": voice_list("TEXTTOSPEECH_LOCALVOICE_FOR_EN"),
+            "es-MX": voice_list("TEXTTOSPEECH_LOCALVOICE_FOR_ES"),
+            "fr-CA": voice_list("TEXTTOSPEECH_LOCALVOICE_FOR_FR"),
+            "en-GB": voice_list("TEXTTOSPEECH_LOCALVOICE_FOR_GB"),
+            "de-DE": voice_list("TEXTTOSPEECH_LOCALVOICE_FOR_DE"),
+            "it-IT": voice_list("TEXTTOSPEECH_LOCALVOICE_FOR_IT"),
         }
     }
 
