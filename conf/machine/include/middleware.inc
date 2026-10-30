@@ -5,12 +5,15 @@ RDK_MW_ARCH ??= "${MACHINE}"
 MIDDLEWARE_ARCH = "${RDK_MW_ARCH}-middleware"
 PACKAGE_EXTRA_ARCHS:append = " ${MIDDLEWARE_ARCH}"
 
-RELEASE_NUM = "8.7.3.0"
+RELEASE_NUM = "MW-G3-BRINGUP30"
 
-MW_IPK_PATH ?= "middleware-rel/${RELEASE_NUM}"
+MW_IPK_PATH ?= "middleware-dbg/${RELEASE_NUM}"
 MW_IPK_SERVER_PATH ?= "${RDK_ARTIFACTS_BASE_URL}/${MW_IPK_PATH}/${RDK_MW_ARCH}/ipks/${BUILD_VARIANT}"
 
 IPK_FEED_URIS += " \ 
                 ${MIDDLEWARE_ARCH}##${MW_IPK_SERVER_PATH} "
 
 include ${@'oss_mw.inc' if 'STACK_LAYER_OSS_SUPPORT' in d.getVar('DISTRO_FEATURES').split() else ''}
+
+# TEMP DEBUG: print the MW feed URL IA really uses
+# IPK_FEED_URIS += "${@bb.warn('MWFEED %s' % d.expand('${MIDDLEWARE_ARCH}##${MW_IPK_SERVER_PATH}')) or ''}"
