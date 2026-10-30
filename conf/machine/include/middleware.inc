@@ -16,4 +16,4 @@ IPK_FEED_URIS += " \
 include ${@'oss_mw.inc' if 'STACK_LAYER_OSS_SUPPORT' in d.getVar('DISTRO_FEATURES').split() else ''}
 
 # TEMP DEBUG: print the MW feed URL IA really uses
-IPK_FEED_URIS += "${@bb.warn('MWFEED %s' % d.expand('${MIDDLEWARE_ARCH}##${MW_IPK_SERVER_PATH}')) or ''}"
+# IPK_FEED_URIS += "${@bb.warn('MWFEED %s' % d.expand('${MIDDLEWARE_ARCH}##${MW_IPK_SERVER_PATH}')) or ''}"
