@@ -5,7 +5,7 @@ RDK_MW_ARCH = "xione-uk"
 MIDDLEWARE_ARCH = "${RDK_MW_ARCH}-middleware"
 PACKAGE_EXTRA_ARCHS:append = " ${MIDDLEWARE_ARCH}"
 
-RELEASE_NUM = "XIONE-18553-avlog-hal-v1"
+RELEASE_NUM = "XIONE-18553-avlog-ioctl-dobby"
 
 MW_IPK_PATH ?= "middleware-dbg/${RELEASE_NUM}"
 MW_IPK_SERVER_PATH ?= "${RDK_ARTIFACTS_BASE_URL}/${MW_IPK_PATH}/${RDK_MW_ARCH}/ipks/${BUILD_VARIANT}"
